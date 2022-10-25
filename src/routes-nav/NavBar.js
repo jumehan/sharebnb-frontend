@@ -26,6 +26,7 @@ import './NavBar.css';
  *  App -> NavBar
  *
  */
+
 function NavBar({ logout }) {
 
   //navbar collapse  logic
@@ -35,6 +36,7 @@ function NavBar({ logout }) {
   const { currentUser } = useContext(UserContext);
   console.debug("NavBar", "currentUser=", currentUser);
 
+  //TODO: add responsive badge notification for new unread messages
   function showLoggedIn() {
     return (
       <>
@@ -48,12 +50,12 @@ function NavBar({ logout }) {
 
         <NavItem>
           <NavLink to="/messages">Inbox</NavLink>
-          <Badge style={{ marginLeft: '.25rem' }}
+          {/* <Badge style={{ marginLeft: '.25rem' }}
             color="danger"
             pill
           >
             5
-          </Badge>
+          </Badge> */}
         </NavItem>&nbsp;&nbsp;&nbsp;
 
         <NavItem>
@@ -83,9 +85,9 @@ function NavBar({ logout }) {
   }
 
   return (
-    <div>
+    <nav>
       <Navbar className="NavBar shadow-sm" bg="light" expand="md" color="white">
-        <NavbarBrand href="/">Share BnB</NavbarBrand>
+        <NavbarBrand href="/">ShareBnB</NavbarBrand>
         <NavbarToggler onClick={toggle} aria-controls="basic-navbar-nav" />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto">
@@ -98,7 +100,7 @@ function NavBar({ logout }) {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+    </nav>
   );
 }
 

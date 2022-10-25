@@ -36,10 +36,10 @@ function Homepage() {
           paddingTop: "2rem",
         }}
       >
-        <h1>Share B&B</h1>
-        <h5>Search for homes and apartments with an outdoor space to rent!</h5>
+        <h1>ShareB&B</h1>
+        <h5>Search for outdoor spaces to rent!</h5>
         {currentUser ? (
-          <p> Welcome back, {currentUser.username} </p>
+          <p> Welcome back, <b>{currentUser.username}</b> </p>
         ) : (
           <>
             <Link to="/login">
