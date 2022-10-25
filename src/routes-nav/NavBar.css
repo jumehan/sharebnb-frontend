@@ -3,10 +3,11 @@
 }
 
 .NavBar a {
-    color: black;
+    color: rgba(0,0,0,.8);
+    font-weight: 600;
   }
 
 .NavBar a.active {
-    color: rgb(201, 0, 0);
+    color: rgb(73, 151, 207);
 
   }

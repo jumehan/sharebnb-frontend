@@ -11,7 +11,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
  */
 
 class ShareBnB {
-  // the token for interactive with the API will be stored here.
+  // the token for interacting with the API will be stored here.
   static token;
 
   static async request(endpoint, data = {}, method = "get") {
@@ -61,10 +61,12 @@ class ShareBnB {
   }
 
   /** Get a property by id */
+
   static async getProperty(id) {
     let res = await this.request(`properties/${id}`);
     return res.property;
   }
+
   /** Create property
    * formData- { title, address, description ,price }
    *
@@ -82,6 +84,7 @@ class ShareBnB {
    *
    * returns {property }
    */
+
   static async bookProperty({ startDate, endDate, propertyId }) {
     const res = await this.request(`properties/${propertyId}/bookings`,
       { startDate, endDate, propertyId }, 'post');
@@ -90,6 +93,7 @@ class ShareBnB {
   }
 
   /**  Handles post request with content-type  "multipart/form-data" */
+  
   static async upload(endpoint, data, method = "post") {
     console.debug("API Call:", endpoint, data, method);
 
@@ -98,8 +102,6 @@ class ShareBnB {
       Authorization: `Bearer ${ShareBnB.token}`,
       "Content-Type": "multipart/form-data"
     };
-
-    // const params = method === "get" ? data : {};
 
     try {
       return (await axios({ url, method, data, headers })).data;
@@ -130,12 +132,14 @@ class ShareBnB {
   }
 
   /** Get messages from*/
+
   static async getMsgsSent(username) {
     let res = await this.request(`users/${username}/from`);
     return res.messages;
   }
 
   /** Get messages to */
+
   static async getMsgsReceived(username) {
     let res = await this.request(`users/${username}/to`);
     return res.messages;

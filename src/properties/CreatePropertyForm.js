@@ -29,7 +29,6 @@ import {
  */
 
 function CreatePropertyForm({ createProperty, uploadImages }) {
-
   const [formData, setFormData] = useState({
     title: "",
     address: "",
@@ -39,7 +38,6 @@ function CreatePropertyForm({ createProperty, uploadImages }) {
 
   const [formErrors, setFormErrors] = useState([]);
   const [property, setProperty] = useState(null);
-
 
   /** Update form data field */
   function handleChange(evt) {
@@ -61,10 +59,8 @@ function CreatePropertyForm({ createProperty, uploadImages }) {
     }
   }
 
-
-
   return (
-    <div>
+    <section>
       {property ? (
         <ImageUploadForm property={property} uploadImages={uploadImages} />
       ) : (
@@ -122,16 +118,16 @@ function CreatePropertyForm({ createProperty, uploadImages }) {
                   />
                 </FormGroup>
 
-                {formErrors.length
-                  ? <Alert type="danger" messages={formErrors} />
-                  : null}
+                {formErrors.length ? (
+                  <Alert type="danger" messages={formErrors} />
+                ) : null}
                 <Button color="primary">Submit</Button>
               </Form>
             </Col>
           </Row>
         </Container>
       )}
-    </div>
+    </section>
   );
 }
 

@@ -1,14 +1,6 @@
 import { useState } from "react";
-
 import Alert from "../common/Alert";
-
-import {
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Button,
-} from "reactstrap";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 /** Form to send message
  * Props:
@@ -22,7 +14,6 @@ import {
  * App -> RouteList -> SendMessageForm  -> Alert */
 
 function SendMessageForm({ sendMsg, toUsername }) {
-
   const [saveConfirmed, setSaveConfirmed] = useState(false);
   const [formData, setFormData] = useState({
     toUsername: toUsername || "",
@@ -53,8 +44,8 @@ function SendMessageForm({ sendMsg, toUsername }) {
   }
 
   return (
-    <Form onSubmit={handleSubmit} style={{ padding: "0.5rem" }}>
-      <legend>Send Message</legend>
+    <Form onSubmit={handleSubmit} style={{ padding: "2rem" }}>
+      <legend>Send a message to the host</legend>
 
       <FormGroup>
         <Label for="toUsername">To:</Label>
@@ -75,19 +66,14 @@ function SendMessageForm({ sendMsg, toUsername }) {
           type="textarea"
           required
         />
-
       </FormGroup>
 
-      {formErrors.length
-        ? <Alert type="danger" messages={formErrors} />
-        : null}
-      {saveConfirmed
-        ?
+      {formErrors.length ? <Alert type="danger" messages={formErrors} /> : null}
+      {saveConfirmed ? (
         <Alert type="success" messages={["Message sent!"]} />
-        : null}
+      ) : null}
       <Button color="primary">Send Message</Button>
     </Form>
-
   );
 }
 

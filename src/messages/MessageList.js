@@ -4,8 +4,8 @@ import Tabs from 'react-bootstrap/Tabs';
 import { ListGroup } from 'reactstrap';
 import ShareBnB from '../api/api';
 import UserContext from "../auth/UserContext";
-
 import MessageCard from './MessageCard';
+
 
 /** MessageList for current user
  * Context:
@@ -19,8 +19,6 @@ import MessageCard from './MessageCard';
 
 function MessageList() {
 
-
-
   const { currentUser } = useContext(UserContext);
 
   const [messages, setMessages] = useState({
@@ -29,10 +27,8 @@ function MessageList() {
     isLoading: true
   });
 
-
-
-
   /* calls api to get messages sent and received */
+
   useEffect(function fetchMessagesList() {
     async function fetchMessages() {
       const sentRes = await ShareBnB.getMsgsSent(currentUser.username);
@@ -42,17 +38,14 @@ function MessageList() {
         received: receivedRes,
         isLoading: false
       });
-
-
     }
     fetchMessages();
-
   }, [currentUser]);
 
   if (messages.isLoading) return <i>Loading...</i>;
 
   return (
-    <div style={{ backgroundColor: "white", }}>
+    <section style={{ backgroundColor: "white", margin: "5rem"}}>
       <Tabs
         defaultActiveKey="inbox"
         transition={false}
@@ -96,9 +89,8 @@ function MessageList() {
               <p className="lead">Sorry, you don't have any messages!</p>
             )}
         </Tab>
-
       </Tabs>
-    </div>
+    </section>
   );
 }
 

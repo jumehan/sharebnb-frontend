@@ -27,7 +27,7 @@ function PropertyCard({ property }) {
           width: '18rem',
           height: '16rem',
           border: '0px',
-          backgroundColor: 'rgba(0,0,0,.1)',
+          backgroundColor: 'white',
           color: 'black',
         }}
       >
@@ -45,8 +45,8 @@ function PropertyCard({ property }) {
           }}
         /> */}
         <CardBody>
-          <CardTitle tag="h5">{title}</CardTitle>
-          <CardSubtitle style={{color: 'grey'}}>{address}</CardSubtitle>
+          <CardTitle style={{color: 'grey'}} tag="h5">{title}</CardTitle>
+          <CardSubtitle>{address}</CardSubtitle>
         </CardBody>
       </Card>
     </NavLink>

@@ -11,20 +11,24 @@ import UserContext from "../auth/UserContext";
  *
  * App -> RouteList -> UserDetails
  */
+
 function UserDetails() {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <Container >
-      <Card className="shadow-sm" style={{ margin: '20px', padding: "2rem" }}>
-        <CardTitle tag="h2">{currentUser.firstName} {currentUser.lastName}</CardTitle>
+    <Container>
+      <Card className="shadow-sm" style={{ margin: "20px", padding: "2rem" }}>
+        <CardTitle tag="h2">
+          {currentUser.firstName} {currentUser.lastName}
+        </CardTitle>
         <CardBody>
-        <p> username: {currentUser.username}</p>
-        <p> email: {currentUser.email}</p>
-        <p> phone: {currentUser.phone}</p>
+          <p> username: {currentUser.username}</p>
+          <p> email: {currentUser.email}</p>
+          <p> phone: {currentUser.phone}</p>
         </CardBody>
       </Card>
     </Container>
   );
 }
+
 export default UserDetails;
