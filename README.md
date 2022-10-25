@@ -7,6 +7,7 @@
 * listing search function
 --------------------------------------------------------
 ## sharebnb backend:
+![preview img](/sharebnbpreview.png)
 * [express back-end](https://github.com/jumehan/sharebnb-backend)
 * [demo](https://r27-sharebnb-jmh.herokuapp.com)
 
