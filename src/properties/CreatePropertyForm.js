@@ -102,7 +102,7 @@ function CreatePropertyForm({ createProperty, uploadImages }) {
                     name="description"
                     value={formData.description}
                     onChange={handleChange}
-                    type="text"
+                    type="textarea"
                     required
                   />
 

@@ -101,6 +101,7 @@ function SignupForm({ signup }) {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
+                type="password"
                 required
               />
             </FormGroup>
