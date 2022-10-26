@@ -6,7 +6,7 @@
 * users can message each other to ask questions
 * listing search function
 --------------------------------------------------------
-## sharebnb backend:
+## sharebnb:
 ![preview img](/sharebnbpreview.png)
 * [demo](http://sharebnb-jmh.surge.sh)
 * [express back-end](https://github.com/jumehan/sharebnb-backend)
