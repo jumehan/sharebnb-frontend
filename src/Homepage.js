@@ -17,29 +17,40 @@ function Homepage() {
       className="Homepage"
       style={{
         position: "relative",
-        width: "70vw",
-        height: "25vh",
-        minHeight: "400px",
+        width: "68vw",
+        height: "20vh",
+        minHeight: "425px",
       }}
     >
       <div
         className="Homepage-text"
         style={{
           textAlign: "center",
-          backgroundColor: "rgba(0,0,0,.1)",
+          backgroundColor: "rgba(0,0,0,.33)",
           color: "rgba(0,0,0,.8)",
           position: "absolute",
           width: "100%",
-          height: "50%",
-          top: "50%",
+          height: "55%",
+          top: "44%",
           left: "20%",
-          paddingTop: "2rem",
+          padding: "1rem",
         }}
       >
         <h1>ShareB&B</h1>
-        <h5>Search for outdoor spaces to rent!</h5>
+        <h3>Share your extra space. Get paid.</h3>
+
+        <p style= {{color:"lightgrey"}}>
+          <i>
+            Sharebnb is a space sharing app that matches people who have space
+            to share with people looking for a place to stay.
+          </i>
+        </p>
+
         {currentUser ? (
-          <p> Welcome back, <b>{currentUser.username}</b> </p>
+          <p>
+            {" "}
+            Welcome back, <b>{currentUser.username}</b>{" "}
+          </p>
         ) : (
           <>
             <Link to="/login">

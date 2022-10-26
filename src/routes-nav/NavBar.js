@@ -6,12 +6,12 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem, Badge
-} from 'reactstrap';
+  NavItem,
+  // Badge,
+} from "reactstrap";
 import { NavLink } from "react-router-dom";
-import 'bootstrap/dist/js/bootstrap.bundle';
-import './NavBar.css';
-
+import "bootstrap/dist/js/bootstrap.bundle";
+import "./NavBar.css";
 
 /** NavBar Component, responsive toggle
  * NavBar display changes depending on user logged in or not
@@ -23,12 +23,11 @@ import './NavBar.css';
  * State: -isOpen: boolean -  collapse navbar
  *
  * Context: {currentUser}
- *  App -> NavBar
+ * App -> NavBar
  *
  */
 
 function NavBar({ logout }) {
-
   //navbar collapse  logic
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -42,12 +41,12 @@ function NavBar({ logout }) {
       <>
         <NavItem>
           <NavLink to="/properties">Properties for Rent</NavLink>
-        </NavItem>&nbsp;&nbsp;&nbsp;
-
+        </NavItem>
+        &nbsp;&nbsp;&nbsp;
         <NavItem>
           <NavLink to="/properties/add">List a Property</NavLink>
-        </NavItem>&nbsp;&nbsp;&nbsp;
-
+        </NavItem>
+        &nbsp;&nbsp;&nbsp;
         <NavItem>
           <NavLink to="/messages">Inbox</NavLink>
           {/* <Badge style={{ marginLeft: '.25rem' }}
@@ -56,12 +55,12 @@ function NavBar({ logout }) {
           >
             5
           </Badge> */}
-        </NavItem>&nbsp;&nbsp;&nbsp;
-
+        </NavItem>
+        &nbsp;&nbsp;&nbsp;
         <NavItem>
           <NavLink to="/profile">Profile</NavLink>
-        </NavItem>&nbsp;&nbsp;&nbsp;
-
+        </NavItem>
+        &nbsp;&nbsp;&nbsp;
         <NavItem>
           <NavLink to="/logout" onClick={logout}>
             Logout {currentUser.username}
@@ -76,7 +75,8 @@ function NavBar({ logout }) {
       <>
         <NavItem>
           <NavLink to="/login">Log In</NavLink>
-        </NavItem>&nbsp;&nbsp;&nbsp;
+        </NavItem>
+        &nbsp;&nbsp;&nbsp;
         <NavItem>
           <NavLink to="/signup">Sign up</NavLink>
         </NavItem>
@@ -91,12 +91,7 @@ function NavBar({ logout }) {
         <NavbarToggler onClick={toggle} aria-controls="basic-navbar-nav" />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto">
-            {currentUser
-              ?
-              showLoggedIn()
-              :
-              showLoggedOut()
-            }
+            {currentUser ? showLoggedIn() : showLoggedOut()}
           </Nav>
         </Collapse>
       </Navbar>

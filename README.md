@@ -8,8 +8,8 @@
 --------------------------------------------------------
 ## sharebnb backend:
 ![preview img](/sharebnbpreview.png)
+* [demo](http://sharebnb-jmh.surge.sh)
 * [express back-end](https://github.com/jumehan/sharebnb-backend)
-* [demo](https://r27-sharebnb-jmh.herokuapp.com)
 
 ## technologies:
 * react
@@ -27,9 +27,10 @@
 * showing listings on map
 * functional message notification
 * featured listings on homepage
+* move css to seperate pages
 
 ## aknowledgements:
-this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+this project was bootstrapped with [create react app](https://github.com/facebook/create-react-app).
 
 ## setup:
 in the project directory, you can run:
